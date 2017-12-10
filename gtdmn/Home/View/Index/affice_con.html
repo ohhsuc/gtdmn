@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>公告内容</title>
+		<link href="<{$Think.const.HOME_URL}>css/bootstrap.css" rel="stylesheet">
+		<link href="<{$Think.const.HOME_URL}>Less/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="<{$Think.const.HOME_URL}>css/default.css">
+		<link href="<{$Think.const.HOME_URL}>css/offcanvas.min.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div id="header"></div>
+	<!------------------------------------------------------------------------->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 ">
+					<ul class="breadcrumb">
+					<li><a href="<{:U('index')}>">首页</a></li>
+					<li><a href="<{:U('affice_ls')}>">公告</a></li>
+					<li class="active">公告内容</li>
+				</ul>
+				</div>
+				<div class="col-md-12 aff_con_title"><{$affcon[0]['ac_titile']}></div>
+				<div class="col-md-12 aff_con_date">
+					<div class="col-md-offset-3 col-md-4 col-sm-offset-3 col-sm-4  col-xs-8">发布时间：<span><{:date('Y-m-d H:i:s');($affcon[0]['ac_date'])}></span></div>
+					<div class="col-md-5 col-sm-5 col-xs-4">作者：<span><{$affcon[0]['usr_name']}></span></div>
+				</div>
+				<div class="col-md-12 aff_con_con">
+					<{$affcon[0]['ac_context']}>
+				</div>
+				<div class="col-md-12 aff_con_page">
+					<!-- <ul class="pager">
+						<li><a href="<{:U('affice_con',array('ac_id'=>$affcon[0]['ac_id']-1))}>">上一页</a></li>
+						<li><a href="<{:U('affice_con',array('ac_id'=>$affcon[0]['ac_id']+1))}>">下一页</a></li>
+					</ul> -->
+				</div>
+			</div>
+		</div>
+
+	<!---------------------------------------------------------------->
+
+	<div id="footer"></div>
+
+
+
+
+		<script src="<{$Think.const.HOME_URL}>js/jquery.min.js" ></script>
+		<script src="<{$Think.const.HOME_URL}>js/bootstrap.js"></script>
+		<script src="<{$Think.const.HOME_URL}>js/offcanvas.min.js"></script>
+
+		<script type="text/javascript">
+		$("#header").load("<{:U('header')}>");
+		$("#footer").load("<{:U('footer')}>");
+		</script>
+	</body>
+</html>

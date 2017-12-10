@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>公告列表</title>
+		<link href="<{$Think.const.HOME_URL}>css/bootstrap.css" rel="stylesheet">
+		<link href="<{$Think.const.HOME_URL}>Less/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="<{$Think.const.HOME_URL}>css/default.css">
+		<link href="<{$Think.const.HOME_URL}>css/offcanvas.min.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div id="header"></div>
+	<!---------------------------------公告---------------------------------------->
+		<div class="container affice_ls">
+			<div class="row">
+				<div class="affice_ls_title">
+					<ul class="breadcrumb">
+						<li><a href="<{:U('index')}>">&nbsp;&nbsp;首页</a></li>
+						<li class="active">公告</li>
+					</ul>
+				</div>
+				<div class="affice_ls_con">
+					<div class="col-md-4 hidden-sm hidden-xs">
+						<div class="col-md-11">
+							<div class="thumbnail">
+								<img src="<{$Think.const.HOME_URL}>img/lsd18.png">
+							</div>
+
+						</div>
+						<div class="col-md-11">
+							<div class="thumbnail">
+								<img src="<{$Think.const.HOME_URL}>img/lsd28.png">
+							</div>
+
+						</div>
+					</div>
+					<div class="col-md-8 affice_ls_con1 ">
+
+
+						<foreach name="aff" item="affi">
+						<a href="<{:U('affice_con',array('ac_id'=>$affi['ac_id']))}>">
+							<div class="col-md-9 col-sm-9 col-xs-9"><{$affi['ac_titile']}></div>
+							<div class="col-md-3 col-sm-3 col-xs-3 date"><{$affi['ac_date']|strtotime|date='Y-m-d',###}></div>
+						</a>
+						</foreach>
+
+
+					</div>
+
+
+
+				</div><!--affice_ls_con-->
+				<div>
+					<div class="col-lg-offset-6 col-md-offset-4 col-sm-offset-4 col-xs-offset-2">
+					<{$page}>
+				</div>
+				</div>
+
+
+
+			</div>
+		</div>
+
+	<!---------------------------------------------------------------->
+
+	<div id="footer"></div>
+
+
+
+
+		<script src="<{$Think.const.HOME_URL}>js/jquery.min.js" ></script>
+		<script src="<{$Think.const.HOME_URL}>js/bootstrap.js"></script>
+		<script src="<{$Think.const.HOME_URL}>js/offcanvas.min.js"></script>
+
+		<script type="text/javascript">
+		$("#header").load("<{:U('header')}>");
+		$("#footer").load("<{:U('footer')}>");
+		$(function(){
+			$(".pagination li .current").css("background","#337ab7").css("color","#fff");
+		});
+		</script>
+	</body>
+</html>

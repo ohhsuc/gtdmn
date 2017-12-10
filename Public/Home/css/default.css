@@ -1,0 +1,93 @@
+body, html { font-size: 100%; 	padding: 0; margin: 0;}
+
+/* Reset */
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+a{color: #2fa0ec;text-decoration: none;outline: none;}
+a:hover,a:focus{color:#74777b;}
+.pictext1{
+	position: relative;
+}
+.pictext{
+	height:70px;
+	background: rgba(255,255,255,0.5);
+	position:absolute ;
+	bottom: 0;
+	width: 100%;
+	padding:10px;
+	color: darkred;
+}
+.affice_ls_con{
+	font-size: 15px;
+}
+.back_tic{
+	margin-top: 15px;
+}
+.ticket_pic{
+	width: 150px;
+    height: 141px;
+    padding-top: 20px;
+    border-radius: 10%;
+}
+/---------------媒体查询---------------------
+@media (max-width: 767px){
+.visible-xs {
+    display: block !important;
+    text-align: center;
+    }   
+}
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+
+
+
+}
+
+
+
+
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+.background{
+	width: 100%;
+	background:rgba(254,248,201,0.7);
+}
+.display_content{
+	
+	margin-top: 50px;
+	height: 400px;
+	width: 90%;
+	font-size: 12px;
+}
+/*.background1{
+	width: 100%;
+	height: 346px;
+	background:rgba(154,139,255,0.1);
+	border-radius: 10px;
+}*/
+
+}
+
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+
+
+}

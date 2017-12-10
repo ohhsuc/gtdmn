@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8" />
+
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0;" name="viewport"  />
+
+		<title>个人主页</title>
+
+		<link href="<{$Think.const.HOME_URL}>css/bootstrap.css" rel="stylesheet">
+
+		<link href="<{$Think.const.HOME_URL}>Less/style.css" rel="stylesheet" />
+
+		<!--<link rel="stylesheet" type="text/css" href="<{$Think.const.HOME_URL}>css/default.css">-->
+
+		<link href="<{$Think.const.HOME_URL}>css/default.css">
+
+		<link href="<{$Think.const.HOME_URL}>css/offcanvas.min.css" rel="stylesheet" type="text/css">
+
+		<link href="<{$Think.const.HOME_URL}>Less/new_file.css" />
+
+	</head>
+
+
+
+	<body>
+
+		<!---------------------------------导航---------------------------------------->
+
+		<nav class="navbar navbar-inverse navbar-static-top " id='menu'>
+
+		  <div class="container">
+
+			<div class="navbar-header">
+
+			  <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="offcanvas">
+
+				<span class="sr-only">Toggle navigation</span>
+
+				<span class="icon-bar"></span>
+
+				<span class="icon-bar"></span>
+
+				<span class="icon-bar"></span>
+
+			  </button>
+
+
+
+			</div>
+
+			<div id="navbar" class="collapse navbar-collapse sidebar-offcanvas">
+
+			  <ul class="nav navbar-nav">
+
+					<li class="active"><a href="<{:U('Index/index')}>">首页</a></li>
+
+					<li><a href="<{:U('Index/intro')}>">景区简介</a></li>
+
+					<li><a href="<{:U('Index/nav_gui')}>">语音导游</a></li>
+
+					<li><a href="<{:U('Index/nav_plan')}>">如何抵达</a></li>
+
+					<li><a href="<{:U('UserHome/usr_home')}>">门票预订</a></li>
+
+					<li><a href="<{:U('Index/view_pic')}>">风光展示</a></li>
+
+					<li><a href="<{:U('Index/affice_ls')}>">公&nbsp;&nbsp;&nbsp;&nbsp;告</a></li>
+
+					<li><a href="<{:U('UserHome/usr_home')}>">问题咨询</a></li>
+
+					<li><a href="<{:U('Index/cont_info')}>">关于我们</a></li>
+
+			  </ul>
+
+			</div><!--/.nav-collapse -->
+
+		  </div>
+
+		</nav>
+
+		<!-----------------------------个人信息----------------------------------->
+
+		<div class="container use">
+
+			<div class="row">
+
+				<div class="col-md-2 col-sm-3 col-xs-3 use_left">
+
+					<div class="col-md-12 use_img" data-toggle="modal" data-target="#mymodal1">
+
+						<a href="#"><img src="__ROOT__/<{$usrinfo[0]['usr_pic']}>" /></a>
+
+					</div>
+
+					<div class="col-md-12 title" data-toggle="modal" data-target="#mymodal1">修改头像</div>
+
+					<div class="col-md-12 yhgl">用户管理</div>
+
+
+
+					<div class="col-md-12 grxx" id="user_info">个人信息</div>
+
+					<div class="col-md-12 grxx" id="user_pass">密码修改</div>
+
+					<div class="col-md-12 grxx" id="ticket">门票预订</div>
+
+					<div class="col-md-12 grxx" id="hotel">酒店预订</div>
+
+					<div class="col-md-12 grxx" id="order">订单管理</div>
+
+					<div class="col-md-12 grxx" id="log_qus">问题咨询</div>
+
+					<div class="col-md-12 grxx" id="log_page">登陆日志</div>
+
+
+
+				</div>
+
+				<div class="col-md-9 col-sm-7 col-xs-7 use_right" id="user_info_con">
+
+					<div class="col-12 title " data-toggle="modal" data-target="#mymodal">
+
+						<div class="col-md-10 col-sm-9 col-xs-9">个人信息</div>
+
+						<div class="col-md-2 col-sm-3 col-xs-3 ">
+
+							<a href="#" class="glyphicon glyphicon-pencil"></a>
+
+							<a href="#" class="hidden-xs">编辑</a>
+
+						</div>
+
+					</div>
+
+
+
+					<div class="col-12 use_con">
+
+						<div class="col-md-2 col-sm-2 col-xs-12">
+
+							<div class="use_title">昵称</div>
+
+						</div>
+
+						<div class="col-md-10 col-sm-10 col-xs-12">
+
+							<div class="use_name"><{$usrinfo[0]['usr_name']}></div>
+
+						</div>
+
+					</div>
+
+					<div class="col-12 use_con">
+
+						<div class="col-md-2 col-sm-2 col-xs-12">
+
+							<div class="use_title">手机</div>
+
+						</div>
+
+						<div class="col-md-10 col-sm-10 col-xs-12">
+
+							<div class="use_name"><{$usrinfo[0]['usr_phone']}></div>
+
+						</div>
+
+					</div>
+
+					<div class="col-12 use_con">
+
+						<div class="col-md-2 col-sm-2 col-xs-12">
+
+							<div class="use_title">性别</div>
+
+						</div>
+
+						<div class="col-md-10 col-sm-10 col-xs-12">
+
+							<div class="use_name"><{$usrinfo[0]['usr_gender']}></div>
+
+						</div>
+
+					</div>
+
+					<div class="col-12 use_con">
+
+						<div class="col-md-2 col-sm-2 col-xs-12">
+
+							<div class="use_title use_title1">个性签名</div>
+
+						</div>
+
+						<div class="col-md-10 col-sm-10 col-xs-12">
+
+							<div class="use_name"><{$usrinfo[0]['usr_detail']}></div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-----------------------------密码修改----------------------------------->
+
+				<div class="col-lg-9 col-md-9 col-sm-7 col-xs-7 user_pass_con" id="user_pass_con" >
+
+					<form class="form-horizontal" action="<{:U('User/userAlterpass')}>" method="post">
+
+					<div class="form-group use_pass">
+
+	                    <label class="col-md-offset-3 col-lg-2 col-md-2 col-xs-10 col-xs-offset-2 control-label">旧密码</label>
+
+	                    <div class="col-xs-10 col-xs-offset-2 ">
+
+	                        <input type="password" class="form-control" name="oldpass" id="inputPassword3" placeholder="Password">
+
+	                    </div>
+
+	                </div>
+
+	                <div class="form-group use_pass">
+
+	                    <label class="col-md-offset-3 col-md-2 col-xs-10 col-xs-offset-2 control-label">修改密码</label>
+
+	                    <div class="col-xs-10 col-xs-offset-2 ">
+
+	                        <input type="password" class="form-control" name="newpass" id="inputPassword3" placeholder="Password">
+
+	                    </div>
+
+	                </div>
+
+	                <div class="form-group use_pass">
+
+	                    <label class="col-md-offset-3 col-md-2 col-xs-10 col-xs-offset-2 control-label">再次输入</label>
+
+	                    <div class="col-xs-10 col-xs-offset-2 " >
+
+	                        <input type="password" class="form-control col-xs-12" name="newpass2" id="inputPassword3" placeholder="Password">
+
+	                    </div>
+
+	                </div>
+
+	                <div class="form-group use_pass1">
+
+                    <div class="col-sm-offset-5 col-sm-5">
+
+                      <button type="submit" class="btn btn-danger col-md-5 col-sm-5 col-xs-10 col-xs-offset-4">Save</button>
+
+                    </div>
+
+                  </div>
+
+							</form>
+
+				</div>
+
+		<!---------------------------登陆日志------------------------------------>
+
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 log" id="log_page_con">
+
+					<div data-spy="scroll" style="padding: 0px 10px;height:550px;overflow:auto;position: relative;">
+
+						<div class="col-lg-12 col-md-12 log_title1">
+
+						<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs log_con">浏览器</div>
+
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 log_con">时间</div>
+
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 log_con">ip</div>
+
+						<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs log_con">类型</div>
+
+					</div>
+
+					<foreach name="usrinfo[0]['log']" item="usr_log">
+
+						<div class="col-lg-12 col-md-12 log_title">
+
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 hidden-xs log_con"><{$usr_log['log_type']}></div>
+
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xs-6 log_con"><{$usr_log['log_date']}></div>
+
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xs-6 log_con"><{$usr_log['log_ip']}></div>
+
+							<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs log_con">登录</div>
+
+						</div>
+
+				 </foreach>
+
+					</div>
+
+
+
+
+
+				</div><!----日志----->
+
+			<!------------------------问题意见------------------------->
+
+
+
+			<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-9 log_qus_con pad_0" id="log_qus_con">
+
+	            <div data-spy="scroll" class="table" style="padding: 0px 10px;height:300px;overflow:auto;position: relative;" style="padding: 0px 10px;height:300px;overflow:auto;position: relative;">
+
+					<label  class="col-sm-12 control-label">咨询历史：</label>
+
+					<table class="table table-bordered table-striped table-hover " width="100%" >
+
+						<thead>
+
+							<td width="15%">#</td>
+
+							<td width="50%">回复内容</td>
+
+							<td width="25%">回复时间</td>
+
+						</thead>
+
+						<foreach name="ans_ls" item="ansi">
+
+							<tr class="msgtd<{$ansi['send_id']}>">
+
+								<td><{$ansi['usr_name']}></td>
+
+								<td><{$ansi['ans_msg']}></td>
+
+								<td>
+
+									<span class="hidden-xs"><{$ansi['ans_date']|strtotime|date='Y-m-d H:i:s',###}></span>
+
+									<span class="hidden-sm hidden-md hidden-lg"><{$ansi['ans_date']|strtotime|date='H:i:s',###}></span>
+
+								</td>
+
+							</tr>
+
+						</foreach>
+
+					</table>
+
+					</div>
+
+	            <div class="col-md-12 log_qus_title">
+
+	            	<label  class="col-sm-12 control-label">请将您的问题或者意见填入以下框内并提交，我们会尽快为您答复：</label>
+
+	            </div>
+
+							<form action="<{:U('answ')}>" method="post">
+
+	            <div class="col-sm-12">
+
+	                 <textarea name="msg" class="form-control textarea" rows="3"></textarea>
+
+	            </div>
+
+	            <div class="col-sm-12 log_qus_btn">
+
+	                <button type="submit" class="btn btn-default btn-danger col-md-3 col-sm-6
+
+	                	col-xs-7 col-md-offset-4 col-sm-offset-3 col-xs-offset-2
+
+	                	log_qus_btn">提交</button>
+
+	            </div>
+
+						</form>
+
+	        </div>
+
+			<!------------------------门票预订-------------------------->
+
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 ticket pad_0" id="ticket_con">
+
+				<div class="col-md-12 col-xs-12 tick_pic">
+
+					<div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2
+
+						  col-lg-10 col-md-10 col-sm-10 col-xs-12 pad_0">
+
+						<div class="thumbnail">
+
+							<img src="<{$Think.const.HOME_URL}>img/xsw.jpg" />
+
+						</div>
+
+						<div id="etkpro" class="pictext">
+
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				<form class="form-horizontal" action="<{:U('UserHome/userEtk')}>" method="post">
+
+				<div class="col-md-12 col-xs-12 pad_0 tick_menu">
+
+
+
+					<div class="form-group">
+
+                        <label class="col-md-offset-3 col-sm-offset-3 col-md-4 col-sm-4 control-label">请选择门票类型：</label>
+
+                        <div class="col-lg-4 col-md-5 col-sm-7 col-sm-offset-3 col-md-offset-5">
+
+                            <select id="etktype" name="etktype" class="selectpicker show-tick form-control" data-live-search="false">
+
+								<foreach name="etk" item="etki">
+
+									<option value="<{$etki['etk_type_id']}>" datacode="<{$etki['etk_type_price']}>" data-pro="<{$etki['etk_type_pro']}>"><{$etki['etk_type_name']}>»»»»»»￥<{$etki['etk_type_price']}>元</option>
+
+								</foreach>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+				</div>
+
+				<div class="col-md-12 col-xs-12 pad_0 tick_num">
+
+					<div class="col-lg-1 col-md-2 col-sm-2 col-xs-2 count mar pad_0
+
+						col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-xs-offset-3 con" >
+
+						数量
+
+					</div>
+
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar pad_0">
+
+						<a id="etksub" class="glyphicon glyphicon-minus"></a>
+
+					</div>
+
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  num pad_0">
+
+						<input type="text" name="etknum" id="etksl" class="count" value="1" readonly="readonly"/>
+
+					</div>
+
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar pad_0">
+
+						<a id="etkadd" class="glyphicon glyphicon-plus pad_0"></a>
+
+					</div>
+
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar zhang pad_0">
+
+						张
+
+					</div>
+
+				</div>
+
+				<div class="col-md-12 col-xs-12 pad_0 tick_count" >
+
+					<div class="col-lg-offset-7 col-md-offset-8 col-sm-offset-4 col-xs-offset-4">
+
+						<div>共计：<span id="etkzj">120</span>元</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-12 col-xs-12 pad_0 tick_btn col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+
+					<button class="btn btn-default btn-danger col-md-4 col-xs-offset-4">提交订单</button>
+
+				</div>
+
+			</form>
+
+			</div>
+
+			<!------------------------酒店预订-------------------------->
+
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 ticket pad_0" id="hotel_con">
+
+
+
+				<form class="form-horizontal" action="<{:U('UserHome/userHot')}>" method="post">
+
+				<div class="col-md-12 col-xs-12 tick_pic">
+
+					<div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2
+
+						  col-lg-10 col-md-10 col-sm-10 col-xs-12 pad_0 pictext1">
+
+						<div class="thumbnail">
+
+							<img id="hotimg" src="<{$Think.const.HOME_URL}>img/jd1.png" />
+
+						</div>
+
+						<div id="hotpro" class="pictext">
+
+							<!-- <foreach name="hotel" item="hoti">
+
+								<{$hoti['hot_type_pro']}>
+
+							</foreach> -->
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				<div class="col-md-12 col-xs-12 pad_0 tick_menu">
+
+					<div class="form-group">
+
+                        <label class="col-md-offset-3 col-sm-offset-3 col-md-4 col-sm-4 control-label ">请选择酒店类型：</label>
+
+                        <div class="col-lg-4 col-md-5 col-sm-7 col-sm-offset-3 col-md-offset-5">
+
+                            <select id="hot_type" name="hot_type" class="selectpicker show-tick form-control" data-live-search="false">
+
+															<foreach name="hotel" item="hoti">
+
+																<option value="<{$hoti['hot_type_id']}>" datacode="<{$hoti['hot_type_price']}>" data-pro="<{$hoti['hot_type_pro']}>" data-imgsrc="jd<{$hoti['hot_type_id']}>.png"><{$hoti['hot_type_name']}>»»»»»»￥<{$hoti['hot_type_price']}>元</option>
+
+                              </foreach>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+				</div>
+
+				<div class="col-md-7 col-xs-12 tick_date col-lg-offset-5 col-md-offset-5 col-sm-offset-3 ">
+
+					<div class="input-group">
+
+						<label class="control-label col-xs-12">请选择入住日期</label>
+
+						<input name="rdate" id="rdate" type="date" class="form-control"/>
+
+					</div>
+
+
+
+				</div>
+
+				<div class="col-md-7 col-xs-12 tick_date col-lg-offset-5 col-md-offset-5 col-sm-offset-3 ">
+
+					<div class="input-group">
+
+						<label class="control-label col-xs-12">请选择离店日期</label>
+
+						<input name="ldate" id="ldate" type="date" class="form-control col-xs-12" disabled="disabled"/>
+
+					</div>
+
+
+
+				</div>
+
+				<div class="col-md-12 col-xs-12 pad_0 tick_num">
+
+					<div class="col-lg-1 col-md-2 col-sm-2 col-xs-2 count mar pad_0
+
+						col-lg-offset-6 col-md-offset-6 col-sm-offset-4 col-xs-offset-3 con" >
+
+						共
+
+					</div>
+
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  num pad_0">
+
+						<div id="hotsl" class=""></div>
+
+					</div>
+
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar zhang pad_0">
+
+						晚
+
+					</div>
+
+				</div>
+
+				<div class="col-md-12 col-xs-12 pad_0 tick_count" >
+
+					<div class="col-lg-offset-8 col-md-offset-8 col-sm-offset-5 col-xs-offset-3">
+
+						<div>共计：<span id="hotzj">599</span>元</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-10 col-xs-10 pad_0 tick_btn col-lg-offset-3 col-md-offset-4 col-sm-offset-3 ">
+
+					<button type="submit" id="subhot" class="btn btn-default btn-danger col-lg-4 col-md-4 col-xs-7 col-lg-offset-3 col-sm-offset-2 col-xs-offset-3">提交订单</button>
+
+				</div>
+
+			</form>
+
+			</div>
+
+			<!------------------------订单管理-------------------------->
+
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 order_con " id="order_con">
+
+				<div data-spy="scroll" style="padding: 0px 10px;height:550px;overflow:auto;position: relative;">
+
+					<table class="table table-bordered table-striped table-hover tab" width="100%" >
+
+						<thead>
+
+							<td >订单详情</td>
+
+							<td >购买数量</td>
+
+							<td class="hidden-xs">创建时间</td>
+
+							<td >总价</td>
+
+							<td >订单状态</td>
+
+						</thead>
+
+							<foreach name="infodd" item="userdd">
+
+								<empty name="userdd['hot_id']">
+
+										<tr>
+
+											<td>门票[<{$etk[$userdd['etk_type']-1]['etk_type_name']}>]</td>
+
+											<td><{$userdd['etk_num']}>张</td>
+
+											<td class="hidden-xs"><{$userdd['dd_time']}></td>
+
+											<td><{$userdd['etk_num']*$etk[$userdd['etk_type']-1]['etk_type_price']}></td>
+
+											<td>
+
+												<a href="#">
+
+													<button class="btn btn-xs fk<{$userdd['etk_status']}>"></button>
+
+												</a>
+
+											</td>
+
+										</tr>
+
+									<else />
+
+										<tr>
+
+											<td>酒店[<{$hotel[$userdd['hot_type']-1]['hot_type_name']}>]</td>
+
+											<td><{$userdd['rdate']}>至<{$userdd['ldate']}></td>
+
+											<td class="hidden-xs"><{$userdd['dd_time']}></td>
+
+											<td><?php echo ((strtotime($userdd['ldate'])-strtotime($userdd['rdate']))/(24*3600))*$hotel[$userdd['hot_type']-1]['hot_type_price']?></td>
+
+											<td>
+
+												<a href="#">
+
+													<button class="btn btn-xs fk<{$userdd['hot_status']}>"></button>
+
+												</a>
+
+											</td>
+
+										</tr>
+
+								</empty>
+
+							</foreach>
+
+					</table>
+
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+	</div><!----row--- --->
+
+	</div><!----contains------>
+
+	<!------------------ ---------模态框：修改个人信息------------------------------------>
+
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" data-backdrop="static">
+
+  <div class="modal-dialog" role="document">
+
+	  <!-- 内容 -->
+
+	    <div class="modal-content">
+
+	    <!-- 头部 -->
+
+	      <div class="modal-header">
+
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+	        <div class="fon_siz18 b_weight_bold">编辑个人信息</div>
+
+	      </div>
+
+	        <div class="modal-body">
+
+
+
+	            <div class="tab-content">
+
+	                <div class="width_500  margin_auto ">
+
+	                    <form class="form-horizontal" action="<{:U('User/userAlter')}>" method="post">
+
+	                      <div class="form-group">
+
+	                        <label for="inputPassword3" class="col-sm-3 control-label">昵称</label>
+
+	                        <div class="col-sm-7">
+
+	                          <input type="text" class="form-control" name="uname" id="inputPassword3" value="<{$usrinfo[0]['usr_name']}>">
+
+	                        </div>
+
+	                      </div>
+
+	                      <div class="form-group">
+
+	                        <label for="inputPassword3" class="col-sm-3 control-label">手机</label>
+
+	                        <div class="col-sm-7">
+
+	                          <input type="text" class="form-control" name="uphone" id="inputPassword3" value="<{$usrinfo[0]['usr_phone']}>">
+
+	                        </div>
+
+	                      </div>
+
+	                      <div class="form-group">
+
+	                        <label for="inputPassword3" class="col-sm-3 control-label">性别</label>
+
+	                        <div class="col-sm-7">
+
+	                            <div class="radio">
+
+	                                <label>
+
+	                                    <input type="radio" name="ugender" id="man" value="男">男
+
+	                                </label>
+
+	                                <label>
+
+	                                    <input type="radio" name="ugender" id="woman" value="女">女
+
+	                                </label>
+
+	                            </div>
+
+	                        </div>
+
+	                      </div>
+
+	                      <div class="form-group">
+
+	                        <label for="inputPassword3" class="col-sm-3 control-label">个性签名</label>
+
+	                        <div class="col-sm-7">
+
+	                          <textarea name="udetail" class="form-control" rows="3"><{$usrinfo[0]['usr_detail']}></textarea>
+
+	                        </div>
+
+	                      </div>
+
+	                      <div class="model_btn">
+
+	                      <input class="btn btn-primary float_l margin_r40" type="submit" value="确定">
+
+	                      <input class="btn btn-default" type="reset" value="取消">
+
+	                      </div>
+
+	                    </form>
+
+	                </div>
+
+	            </div>
+
+	        </div>
+
+
+
+	    </div>
+
+
+
+	</div>
+
+</div>
+
+	<!---------------------------模态框：修改头像------------------------------------->
+
+	<div class="modal fade" id="mymodal1" tabindex="-1" data-backdrop="static">
+
+			<div class="modal-dialog modal-xs">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<button class="close" data-dismiss="modal"><span class="close">&times;</span></button>
+
+						<h4 class="modal-title">修改头像</h4>
+
+					</div>
+
+					<form action="<{:U('UserHome/picupload')}>" enctype="multipart/form-data" method="post">
+
+						<div class="modal-body">
+
+							<p>请选择图片</p>
+
+							<input name="usr_pic" type="file" />
+
+						</div>
+
+						<div class="modal-footer">
+
+							<button type="submit" class="btn btn-primary">确认</button>
+
+							<button class="btn btn-default" data-dismiss="modal">取消</button>
+
+						</div>
+
+				 </form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+	<!---------------------------------------------------------------->
+
+	<div id="footer" ></div>
+
+
+
+		<script src="<{$Think.const.HOME_URL}>js/jquery.min.js" ></script>
+
+		<script src="<{$Think.const.HOME_URL}>js/bootstrap.js"></script>
+
+		<!--<script src="js/bootstrap.min.js"></script>-->
+
+		<script src="<{$Think.const.HOME_URL}>js/offcanvas.min.js"></script>
+
+		<script src="<{$Think.const.HOME_URL}>js/uer_home.js"></script>
+
+		<script type="text/javascript">
+
+			$("#footer").load("<{:U('Index/footer')}>");
+
+
+
+			//设置缺省值
+
+			$(function(){
+
+				var gender = "<{$usrinfo[0]['usr_gender']}>"
+
+				if(gender == "男")
+
+					$("#man").attr("checked","checked");
+
+				else
+
+					$("#woman").attr("checked","checked");
+
+
+
+				$($("#etktype").children().get(0)).attr("selected","selected");
+
+				$($("#hot_type").children().get(0)).attr("selected","selected");
+
+				$("#etksl").val(1);
+
+				$("#hotsl").text(1);
+
+				$("#rdate").val("");
+
+				$("#ldate").val("");
+
+
+
+
+
+
+
+					$(".msgtd<{$Think.session.usrid}>").addClass("info"); //自己的留言
+
+
+
+
+
+					$(".fk1").text("已支付");
+
+					$(".fk1").addClass("btn-success");
+
+					$(".fk0").text("未支付");
+
+					$(".fk0").addClass("btn-danger");
+
+					$(".fk0").parent().attr("href","<{:U('UserHome/zf')}>");
+
+
+
+					$("#etkpro").html($("#etktype").find("option:selected").data("pro"));
+
+					$("#hotpro").html($("#hot_type").find("option:selected").data("pro"));
+
+
+
+			});
+
+
+
+			//门票张数-
+
+			$("#etksub").click(function(){
+
+				$("#etksl").val(parseInt($("#etksl").val())-1);
+
+				if(parseInt($("#etksl").val())<1) $("#etksl").val("1");
+
+				$("#etkzj").html(parseInt($("#etksl").val())*parseInt($("#etktype").find("option:selected").attr("datacode")));
+
+			});
+
+
+
+			//门票张数+
+
+			$("#etkadd").click(function(){
+
+				$("#etksl").val(parseInt($("#etksl").val())+1);
+
+				$("#etkzj").html(parseInt($("#etksl").val())*parseInt($("#etktype").find("option:selected").attr("datacode")));
+
+				if(parseInt($("#etksl").val())>10) {
+
+					$("#etksl").val("10");
+
+					alert("单次最多购买10张");
+
+				}
+
+			});
+
+
+
+			//选择门票类型时改变总价
+
+			$("#etktype").change(function(){
+
+				$("#etkzj").html(parseInt($("#etksl").val())*parseInt($("#etktype").find("option:selected").attr("datacode")));
+
+				$("#etkpro").html($("#etktype").find("option:selected").data("pro"));
+
+			});
+
+			//选择房间类型时改变总价
+
+			$("#hot_type").change(function(){
+
+				$("#hotzj").html(parseInt($("#hotsl").text())*parseInt($("#hot_type").find("option:selected").attr("datacode")));
+
+				$("#hotpro").html($("#hot_type").find("option:selected").data("pro"));
+
+				$("#hotimg").attr("src","<{$Think.const.HOME_URL}>img/"+$("#hot_type").find("option:selected").data("imgsrc"))
+
+			});
+
+
+
+			Date.prototype.diff = function(date){
+
+			  return (this.getTime() - date.getTime())/(24 * 60 * 60 * 1000);
+
+			}
+
+
+
+			$("#rdate").change(function(){
+
+				$("#ldate").removeAttr("disabled");
+
+			});
+
+			//更改日期对天数和按钮的影响
+
+			$("#ldate").change(function(){
+
+				var rdate = new Date($("#rdate").val());
+
+				var ldate = new Date($("#ldate").val());
+
+				var hotsl = ldate.diff(rdate);
+
+				$("#hotsl").html(hotsl);
+
+				if(hotsl<1 || hotsl>7)
+
+				{
+
+					$("#hotsl").html(1);
+
+					hotsl<1 ? $("#subhot").text("请选择正确的日期") : $("#subhot").text("最多预定7天");
+
+					$("#subhot").attr("disabled","disabled");
+
+				}else{
+
+					$("#subhot").text("提交订单");
+
+					$("#subhot").removeAttr("disabled");
+
+				}
+
+				$("#hotzj").html(parseInt($("#hotsl").text())*parseInt($("#hot_type").find("option:selected").attr("datacode")));
+
+			});
+
+
+
+
+
+		</script>
+
+
+
+	</body>
+
+</html>
+

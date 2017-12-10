@@ -1,0 +1,274 @@
+@charset"utf-8";
+
+//------index---------
+.content-page{
+    .content-page-title{
+        text-align: center;
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+    .content-page-con{
+//       margin-left: 100px;
+        .table{
+            text-align: center;
+            thead{
+                height: 50px;
+                line-height: 50px;
+            }
+            tr{
+                height: 35px;
+                line-height: 35px;
+                td{ border: 1px solid;}
+             }
+        }
+    
+    }
+}
+//------公告列表---------
+.affice-ls{
+    margin-top: 20px;
+    font-size: 12px;
+    .affice-ls-title{height: 30px;line-height: 30px;text-align: center;}
+    tr{border: 1px solid;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        td{border: 1px solid;}
+        }
+}
+//------公告内容---------
+.affice_con{
+    padding-top: 15px;
+    .top{
+        margin-left: 15px;
+        .title{
+    //      font-weight: bold;
+            font-size: 18px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            
+        }
+        input{
+            height:35px;
+            width: 280px;
+            font-size: 15px;
+            border-radius: 5%;
+        }
+    }
+    .bottom{
+        margin-left: 15px;
+        margin-top:20px;
+          .title{
+                float: left;
+                font-size: 18px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+            }
+            .edit{
+                float: left;
+                width: 95%;
+                height: 400px;
+//              background: red;
+            }
+    }
+    .btn{
+        text-align: center;
+         margin-top: 20px;
+    }
+}
+//------位置校准---------
+.position{
+    .position_mp{
+        padding: 10px 0 10px 0;
+    }
+    table{
+        width: 100%;
+        thead{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        tr{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            td{
+                border: 1px solid;
+                height:45px;width:100px;
+               .input{height:45px;width:100px;border: none;}
+            }
+        }
+    }
+}
+//------图片列表---------
+.pic_ls{
+    .table{
+        thead{border: 1px solid;text-align: center;height: 35px;line-height: 35px;}
+        tr{
+            td{border: 1px solid;text-align: center;height: 30px;line-height: 30px;}
+        }
+    }
+}
+//------添加图片---------
+.pic_add{
+    margin-top:0px;
+   .form-control{margin-bottom:30px;width: 280px;margin-left: 30px;}
+   .btn{margin-left: 50px;margin-bottom: 20px;}
+}
+//------用户管理---------
+.uer_ls{
+    .table{
+        text-align: center;
+        width: 100%;
+        thead{border: 1px solid;height: 40px;line-height: 40px;}
+        td{border: 1px solid;height: 40px;line-height: 40px;}
+        }
+}
+//------订单管理---------
+.order{
+    margin-top: 40px;
+    text-align: center;
+    .table{
+        width: 100%;
+        margin-top: 20px;
+        thead{border: 1px solid;height: 40px;line-height: 40px;}
+        tr{border: 1px solid;}
+        td{border: 1px solid;height: 40px;line-height: 40px;}
+    }
+}
+//------咨询回复&登录日志---------
+.ask_ans{
+    .table{
+        margin-top: 10px;
+        width:100%;
+        thead{border: 1px solid;height: 40px;line-height: 40px;text-align: center;}
+        tr{border: 1px solid;}
+        td{border: 1px solid;height: 40px;line-height: 40px;text-align: center;}
+    }
+}
+
+
+
+//---------------媒体查询---------------------
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+
+.pic_add{
+    margin-top:20px;
+   .form-control{margin-bottom:40px;margin-left: 100px;}
+   .btn{margin-left: 130px;}
+}
+
+}
+
+
+
+@media (min-width: 992px) {
+.affice_con{
+    padding-top: 15px;
+    .top{
+        margin-left:100px;
+        input{
+            height:35px;
+            width: 280px;
+            font-size: 15px;
+            border-radius: 5%;
+        }
+    }
+    .bottom{
+        margin-left:100px;
+        margin-top:20px;
+        .edit{
+                float: left;
+                width: 70%;
+                height: 400px;
+            }
+    }
+}
+.position{
+    .position_mp{
+        padding: 10px 0 30px 0;
+    }
+    table{
+        width: 60%;
+        thead{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        tr{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            
+            td{
+                height:45px;width:200px;
+                .input{height:45px;width:200px;border: none;}
+            }
+        }
+    }
+}
+.pic_ls{
+    .table{
+        margin-top: 20px;
+        width: 60%;
+        margin-left: 150px;
+        thead{border: 1px solid;}
+        tr{
+            td{border: 1px solid;}
+        }
+    }
+}
+.pic_add{
+    margin-top:0px;
+   .form-control{margin-bottom:40px;margin-left:200px;}
+   .btn{margin-left:300px;}
+}
+.uer_ls{
+    .table{
+        text-align: center;
+        width: 80%;
+        margin-left:100px;
+        thead{border: 1px solid;height: 40px;line-height: 40px;}
+        td{border: 1px solid;height: 40px;line-height: 40px;}
+        }
+}
+.order{
+    margin-top: 40px;
+    text-align: center;
+    .table{
+        width: 80%;
+        margin-top: 20px;
+        margin-left: 100px;
+        thead{border: 1px solid;height: 40px;line-height: 40px;}
+        tr{border: 1px solid;}
+        td{border: 1px solid;height: 40px;line-height: 40px;}
+    }
+}
+.ask_ans{
+    .table{
+        margin-left: 150px;
+        margin-top: 20px;
+        width:70%;
+        thead{border: 1px solid;height: 40px;line-height: 40px;text-align: center;}
+        tr{border: 1px solid;}
+        td{border: 1px solid;height: 40px;line-height: 40px;text-align: center;}
+    }
+}
+
+
+}
+
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+
+.pic_add{
+    margin-top:0px;
+   .form-control{margin-bottom:30px;margin-left: 350px;}
+   .btn{margin-left: 390px;margin-bottom: 20px;}
+}
+
+}

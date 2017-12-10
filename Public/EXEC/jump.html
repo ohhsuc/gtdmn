@@ -1,0 +1,62 @@
+<?php
+    if(C('LAYOUT_ON')) {
+        echo '{__NOLAYOUT__}';
+    }
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>跳转提示</title>
+		<link href="<{$Think.const.HOME_URL}>css/bootstrap.css" rel="stylesheet">
+		<link href="<{$Think.const.HOME_URL}>Less/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="container error">
+			<div class="row">
+				<?php if(isset($message)) {?>
+				<div class="col-md-12 error_title">
+					<p class="t1"><?php echo($message); ?></p>
+					<p class="t2">页面自动<a id="href" href="<?php echo($jumpUrl); ?>">跳转</a>，请等待时间：<b id="wait"><?php echo($waitSecond); ?></b></p>
+				</div>
+				<div class="error_img">
+					<div class="thumbnail col-md-5 col-md-offset-4">
+						<img src="<{$Think.const.HOME_URL}>success.jpeg"/>
+					</div>
+				</div>
+				<?php }else{?>
+					<div class="col-md-12 error_title">
+						<p class="t1"><?php echo($error); ?></p>
+						<p class="t2">页面自动<a id="href" href="<?php echo($jumpUrl); ?>">跳转</a>，请等待时间：<b id="wait"><?php echo($waitSecond); ?></b></p>
+					</div>
+					<div class="error_img">
+						<div class="thumbnail col-md-5 col-md-offset-4">
+							<img src="<{$Think.const.HOME_URL}>error.jpg"/>
+						</div>
+					</div>
+					<?php }?>
+			</div>
+		</div>
+	<!---------------------------------------------------------------->
+
+
+
+
+		<script src="<{$Think.const.HOME_URL}>js/jquery.min.js" ></script>
+		<script src="<{$Think.const.HOME_URL}>js/bootstrap.js"></script>
+		<sdcript type="text/javascript">
+		(function(){
+		var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+		var interval = setInterval(function(){
+			var time = --wait.innerHTML;
+			if(time <= 0) {
+				location.href = href;
+				clearInterval(interval);
+			};
+		}, 1000);
+		})();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link href="<{$Think.const.HOME_URL}>css/bootstrap.css" rel="stylesheet">
+		<link href="<{$Think.const.HOME_URL}>Less/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="<{$Think.const.HOME_URL}>css/default.css">
+		<link href="<{$Think.const.HOME_URL}>css/offcanvas.min.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<!---------------------------------导航---------------------------------------->
+		<nav class="navbar navbar-inverse navbar-static-top " id='menu'>
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="offcanvas">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+
+			</div>
+			<div id="navbar" class="collapse navbar-collapse sidebar-offcanvas">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="<{:U('Index/index')}>">首页</a></li>
+				<li><a href="<{:U('Index/intro')}>">景区简介</a></li>
+				<li><a href="<{:U('Index/nav_gui')}>">语音导游</a></li>
+				<li><a href="<{:U('Index/nav_plan')}>">如何抵达</a></li>
+				<li><a href="<{:U('UserHome/usr_home')}>">门票预订</a></li>
+				<li><a href="<{:U('Index/view_pic')}>">风光展示</a></li>
+				<li><a href="<{:U('Index/affice_ls')}>">公&nbsp;&nbsp;&nbsp;&nbsp;告</a></li>
+				<li><a href="<{:U('UserHome/usr_home')}>">问题咨询</a></li>
+				<li><a href="<{:U('Index/cont_info')}>">关于我们</a></li>
+			  </ul>
+			</div><!--/.nav-collapse -->
+		  </div>
+		</nav>
+
+
+		<!---------------------------------logo行---------------------------------------->
+		<div class="top">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-3 col-sm-3 col-xs-5">
+						<img src="<{$Think.const.HOME_URL}>img/logo.png" alt="" class="logo"/>
+					</div>
+					<div class="col-md-5 col-sm-6 hidden-xs">
+						<span class="top-title">国家AAAAA级旅游景区&nbsp;&nbsp;休闲旅游度假胜地</span>
+					</div>
+
+					<div class="visible-xs col-xs-3 hidden-sm">
+						<!--<span class="top-title-xs">国家5A级旅游景区</span>-->
+					</div>
+					<!-----------------登录电脑版----------------------->
+					<div class="col-md-3 col-sm-3 hidden-xs" >
+						<div class="log_sig">
+							<empty name="Think.session.usrname">
+								<span><img src="__ROOT__/Uploads/usr_img/null.jpg" alt="" class="title_pic"></span>
+								<span class="log_in" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mymodal_log"><a href="#">登录</a></span>
+								<span class="fg">|</span>
+								<span class="sign_in" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mymodal_sig"><a href="#">注册</a></span>
+							<else />
+								<span><img src="__ROOT__/<{$uimg[0]['usr_pic']}>" alt="" class="title_pic"></span>
+								<span class="log_in" class="btn btn-default btn-lg"><a href="<{$button}>"><{$Think.session.usrname}></a></span>
+								<span class="fg">|</span>
+								<span class="sign_in" class="btn btn-default btn-lg"><a href="<{:U('User/userLogout')}>">退出登录</a></span>
+
+							</empty>
+						</div>
+					</div>
+					<!-----------------登录手机版----------------------->
+					<div class="dropdown visible-xs-block col-sm-1 col-xs-4 phone_log">
+						<empty name="Think.session.usrname">
+						<div  data-toggle="dropdown" class="phlo">
+							<img src="__ROOT__/Uploads/usr_img/null.jpg" alt="" class="title_pic" >
+							<a>登录</a>
+						</div>
+						<ul class="dropdown-menu">
+							<span class="log_in" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mymodal_log"><a href="#">登&nbsp;录</a></span>
+							<br/>
+							<span class="sign_in" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mymodal_sig"><a href="#">注&nbsp;册</a></span>
+						</ul>
+						<else />
+						<div  data-toggle="dropdown" class="phlo">
+							<img src="__ROOT__/<{$uimg[0]['usr_pic']}>" alt="" class="title_pic" >
+							<a href=""><{$Think.session.usrname}></a>
+						</div>
+						<ul class="dropdown-menu">
+							<span class="log_in" class="btn btn-default btn-lg"><a href="<{$button}>">主&nbsp;页</a></span>
+							<br/>
+							<span class="sign_in" class="btn btn-default btn-lg"><a href="<{:U('User/userLogout')}>">退&nbsp;出</a></span>
+						</ul>
+						</empty>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!---------------------------------模态框:登录---------------------------------------->
+		<div class="modal fade" id="mymodal_log" tabindex="-1" data-backdrop="static">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal"><span class="close">&times;</span></button>
+						<h4 class="modal-title">用户登录</h4>
+					</div>
+					<div class="modal-body">
+
+					<form class="form-horizontal" action="<{:U('User/userLogin')}>" method="post">
+						<div class="form-group">
+							<label class="col-sm-3 control-label" >用户名：</label>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" name="user" required  placeholder="请输入用户名"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">密&nbsp;&nbsp;码：</label>
+							<div class="col-sm-6">
+								<input type="password" class="form-control" name="pass" placeholder="请输入密码" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 col-xs-12 control-label">验证码：</label>
+							<div class="col-sm-3 col-xs-5">
+								<input type="text" name="verImg" class="form-control" placeholder="请输入验证码" required/>
+							</div>
+							<div class="form-group">
+								<div id="verify" class="col-sm-3 col-xs-6">
+									<img src="<{:U('User/verifyImg')}>">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">登录</button>
+						</div>
+					</form>
+
+					</div>
+						<div class="modal-footer">
+							<h5>为了体验更好的请您先登陆</h5>
+						</div>
+				</div>
+			</div>
+		</div>
+
+	<!---------------------------------模态框：注册---------------------------------------->
+		<div class="modal fade" id="mymodal_sig" tabindex="-1" data-backdrop="static">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal"><span class="close">&times;</span></button>
+						<h4 class="modal-title">用户注册</h4>
+					</div>
+					<div class="modal-body">
+
+					<form class="form-horizontal" action="<{:U('User/userRegister')}>" method="post">
+						<div class="form-group">
+							<label class="col-sm-3 control-label" required>用户名：</label>
+							<div class="col-sm-6">
+								<input type="text" name="reguser" class="form-control" placeholder="请输入用户名" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">密&nbsp;&nbsp;码：</label>
+							<div class="col-sm-6">
+								<input type="password" name="regpass" class="form-control" name="pass" placeholder="请输入密码" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">确认密码：</label>
+							<div class="col-sm-6">
+								<input type="password" name="regpass2" class="form-control" name="pass" placeholder="请输入密码" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 col-xs-12 control-label">验证码：</label>
+							<div class="col-sm-3 col-xs-5">
+								<input type="text" name="verImg" class="form-control" placeholder="请输入验证码" required/>
+							</div>
+							<div class="form-group">
+								<div id="verify" class="col-sm-3 col-xs-6">
+									<img src="<{:U('User/verifyImg')}>">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">注册</button>
+						</div>
+					</form>
+
+					</div>
+						<div class="modal-footer">
+							<h5>请您先注册再进行登陆</h5>
+						</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<script src="<{$Think.const.HOME_URL}>js/jquery.min.js" ></script>
+		<script src="<{$Think.const.HOME_URL}>js/offcanvas.min.js"></script>
+		<script src="<{$Think.const.HOME_URL}>js/bootstrap.js"></script>
+		<script type="text/javascript">
+				$(function(){
+					$("#verify img").click(function(){
+
+									$("#verify img").attr("src","<{:U('User/verifyImg')}>?id="+Math.random());
+
+					});
+					$('.phlo').click(function(){
+						$('.phlo').dropdown()
+					}
+				);
+
+				});
+		</script>
+		<!--<script src="js/offcanvas.js"></script>-->
+
+	</body>
+</html>

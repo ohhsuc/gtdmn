@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>后台模板</title>
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/amazeui.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/core.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/menu.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/index.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/admin.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/page/typography.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/page/form.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/component.css" />
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>Less/admin.css">
+		<link rel="stylesheet" href="<{$Think.const.ADMIN_URL}>css/bootstrap.min.css">
+	</head>
+	<body>
+		<header class="am-topbar am-topbar-fixed-top">
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+					<li><h4 class="page-title">用户列表</h4></li>
+				</ul>
+
+			</div>
+		</header>
+		<div class="admin">
+				  <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+				    <div class="am-offcanvas-bar admin-offcanvas-bar">
+				    	<!-- User -->
+						<div class="user-box am-hide-sm-only">
+	                        <div class="user-img">
+	                            <img src="<{$Think.const.ADMIN_URL}>img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+	                            <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+	                        </div>
+	                        <h5><a href="#">Mat Helme</a> </h5>
+	                        <ul class="list-inline">
+	                            <li>
+	                                <a href="#">
+	                                    <i class="fa fa-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+
+	                            <li>
+	                                <a href="#" class="text-custom">
+	                                    <i class="fa fa-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <!-- End User -->
+
+											<ul class="am-list admin-sidebar-list">
+				 						    <li><a href="<{:U('index')}>"><span class="am-icon-home"></span> 首页</a></li>
+				 						    <li class="admin-parent">
+				 						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 公告管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				 						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+				 						        <li><a href="<{:U('affice_ls')}>" class="am-cf"> 公告列表</a></li>
+				 						        <li><a href="<{:U('affice_add')}>">添加公告</a></li>
+				 						      </ul>
+				 						    </li>
+				 						    <li class="admin-parent">
+				 						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><i class="am-icon-line-chart" aria-hidden="true"></i> 轮播图片管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				 						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+				 						        <li><a href="<{:U('pic_ls')}>" class="am-cf"> 图片列表</a></li>
+				 						      </ul>
+				 						    </li>
+				 						    <li class="admin-parent">
+				 						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav3'}"><i class="am-icon-line-chart" aria-hidden="true"></i> 用户管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				 						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav3">
+				 						        <li><a href="<{:U('uer_ls')}>" class="am-cf"> 用户列表</a></li>
+				 						        <li><a href="<{:U('order_ls')}>" class="am-cf">订单管理</a></li>
+				 						      </ul>
+				 						    </li>
+				 						    <li class="admin-parent">
+				 						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-file"></span> 语音导游 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				 						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">
+				 						        <li><a href="<{:U('position')}>" class="am-cf"> 景区位置校准</a></li>
+				 						      </ul>
+				 						    </li>
+				 						     <li class="admin-parent">
+				 						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav6'}"><span class="am-icon-file"></span> 登录日志 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				 						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav6">
+				 						        <li><a href="<{:U('log')}>" class="am-cf"> 日志记录</a></li>
+				 						      </ul>
+				 						    </li>
+				 						    <li class="admin-parent">
+				 						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav7'}"><span class="am-icon-file"></span> 咨询管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				 						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav7">
+				 						        <li class="ask_height" style="height: 100px;"><a href="<{:U('answer')}>" class="am-cf"> 咨询回复</a></li>
+				 						      </ul>
+				 						    </li>
+				 						  </ul>
+				</div>
+				  </div>
+			<div class="content-page uer_ls">
+				<table class="table" >
+						<thead class="affice-ls-title">
+							<td >#</td>
+							<td >用户名</td>
+							<td >手机号</td>
+							<td >性别</td>
+							<td >签名</td>
+							<td >操作</td>
+							<td >操作</td>
+						</thead>
+						<foreach name="uer" item="ueri">
+							<tr >
+								<td ><{$ueri['usr_id']}></td>
+								<td ><{$ueri['usr_name']}></td>
+								<td ><{$ueri['usr_phone']}></td>
+								<td ><{$ueri['usr_gender']}></td>
+								<td ><{$ueri['usr_detail']|mb_substr=0,8}></td>
+								<td >
+									<button class="btn btn-xs btn-info xgxx" datacode="<{$ueri['usr_id']}>" data-toggle="modal" data-target="#mymodal">修改</button>
+								</td>
+								<td>
+									<button class="btn btn-xs btn-danger xcxx" datacode="<{$ueri['usr_id']}>">删除</button>
+								</td>
+							</tr>
+						</foreach>
+					</table>
+
+					<div class="col-md-12 aff_page">
+						<div class="col-lg-offset-6 col-md-offset-4 col-sm-offset-4 col-xs-offset-2">
+							<{$page}>
+						</div>
+					</div>
+
+			</div>
+		</div>
+		<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+		<!-------------------------模态框---------------------------------->
+		<div class="modal fade" id="mymodal" tabindex="1" data-backdrop="false">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal"><span class="close">&times;</span></button>
+						<h3 class="modal-title">用户列表</h3>
+					</div>
+					<div class="modal-body">
+
+						<form class="form-horizontal" action="<{:U('Exec/updateuser')}>" method="post">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label class="col-sm-3 control-label" required>用户名：</label>
+									<div class="col-sm-6 " style="margin-bottom: 20px;">
+										<input type="text" hidden="hidden" id="uid" name="uid">
+										<input type="text" id="uname" name="uname" class="form-control" required/>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<label class="col-sm-3 control-label" required>手机号：</label>
+									<div class="col-sm-6 " style="margin-bottom: 20px;">
+										<input type="text" id="uphone" name="uphone" class="form-control" required/>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<label class="col-sm-3 control-label" required>性别：</label>
+									<div class="col-sm-6 " style="margin-bottom: 20px;">
+										<input id="man" name="ugender" type="radio" value="男" />男
+										<input id="woman" name="ugender" type="radio" value="女" />女
+									</div>
+								</div>
+								<label class="col-sm-3 control-label" required>个性签名：</label>
+								<div class="col-sm-10 col-md-offset-1 ask-con">
+									<textarea id="udetail" name="udetail" style="width:100%;height:100px;" ></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-danger col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">提交</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<!-- navbar -->
+
+		<script type="text/javascript" src="<{$Think.const.ADMIN_URL}>js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="<{$Think.const.ADMIN_URL}>js/amazeui.min.js"></script>
+		<script type="text/javascript" src="<{$Think.const.ADMIN_URL}>js/app.js" ></script>
+		<script type="text/javascript" src="<{$Think.const.ADMIN_URL}>js/blockUI.js" ></script>
+		<script type="text/javascript" src="<{$Think.const.ADMIN_URL}>js/charts/echarts.min.js" ></script>
+		<script type="text/javascript" src="<{$Think.const.ADMIN_URL}>js/charts/indexChart.js" ></script>
+		<script type="text/javascript" src="<{$Think.const.ADMIN_URL}>js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(".xgxx").click(function(){
+				$.ajax({
+					type:'post',
+					url:'<{:U('Exec/getuser')}>',
+					data:{
+						id:$(this).attr("datacode"),
+					},
+					success:function(response){
+						$("#uid").val(response[0].usr_id);
+						$("#uname").val(response[0].usr_name);
+						$("#uphone").val(response[0].usr_phone);
+						if(response[0].usr_gender == "男"){
+							$("#man").attr("checked","checked");
+						}
+						else {
+							$("#woman").attr("checked","checked");
+						}
+						$("#udetail").html(response[0].usr_detail);
+					}
+				});
+			});
+
+			$(".xcxx").click(function(){
+				var me = this;
+				$.ajax({
+					type:'get',
+					url:'<{:U('Exec/deleteuser')}>',
+					data:{
+						id:$(this).attr("datacode"),
+					},
+					success:function(response){
+						alert(response);
+						$(me).parent().parent().remove();
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>
